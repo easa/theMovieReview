@@ -1,6 +1,6 @@
 import React from 'react';
  
-import  { FirebaseContext } from '../Firebase';
+import  { FirebaseContext } from '../firebase/index';
  
 const SignIn = () => (
   <FirebaseContext.Consumer>
