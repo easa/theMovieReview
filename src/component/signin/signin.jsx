@@ -1,7 +1,7 @@
 import React from 'react';
- 
-import  { FirebaseContext } from '../firebase/index';
- 
+
+import { FirebaseContext } from '../firebase/index';
+
 const SignIn = () => (
   <FirebaseContext.Consumer>
     {firebase => {
@@ -9,5 +9,5 @@ const SignIn = () => (
     }}
   </FirebaseContext.Consumer>
 );
- 
+
 export default SignIn;
