@@ -15,7 +15,6 @@ const Navigation = () => {
   const [routes, setRouts] = useState([])
   const [visibleSignout, setVisibleSignout] = useState(false)
   useEffect(() => {
-    console.log('NAVBAR: is auth ? ', isAuth)
     setVisibleSignout(isAuth)
     setRouts(loadHeader(isAuth))
   },[isAuth])
