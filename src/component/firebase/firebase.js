@@ -8,7 +8,6 @@ class Firebase {
     if (!app.apps.length) {
       app.initializeApp(CONFIG)
       this.auth = app.auth()
-      console.log(app)
     }
   }
   doCreateUserWithEmailAndPassword = (email, password) =>

@@ -19,14 +19,13 @@ const SignUpPage = () => {
     firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        setState({ ...INITIAL_STATE, redirect: '/' });
+        setState({ ...INITIAL_STATE, redirect: '/home' });
       })
       .catch(error => {
         setState({ ...state, error });
     });
   }
   const onChange = event => { 
-    console.log(state.passwordOne)
     setState({ ...state, [event.target.name]: event.target.value })
   }
   if (state.redirect) {
@@ -39,7 +38,6 @@ const SignUpPage = () => {
 }
  
 const SignUpForm = ({ username, email, passwordOne, passwordTwo, error, onChange, onSubmit }) => {
-  console.log('username: ', username, '---------- onchange: ' , onChange)
   const isInvalid =
     passwordOne === '' ||
     passwordOne !== passwordTwo ||
