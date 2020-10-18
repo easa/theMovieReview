@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect }from 'react'
 import { Link } from 'react-router-dom'
-import * as routes from './route'
+import * as routeAuth from './routeAuth'
+import * as routeNonAuth from './routeNonAuth'
 import { SignOutButton } from '../signin/signout'
 import useAuth from '../signin/useAuth'
 
-
+const loadHeader = (isloadWithAuth) => {
+  if (isloadWithAuth)
+    return Object.keys(routeAuth).map(r => ({ name: r, value: routeAuth[r] }))
+  return Object.keys(routeNonAuth).map(r => ({ name: r, value: routeNonAuth[r] }))
+}
 const Navigation = () => {
   const isAuth = useAuth()
-  const NewRoutes = { "SignIn": "/signin", "SignUp": "/signup" }
-  const routeArray = isAuth ?
-    Object.keys(routes).map(r => ({ name: r, value: routes[r] }))
-    : Object.keys(NewRoutes).map(r => ({ name: r, value: NewRoutes[r] }))
+  const [routes, setRouts] = useState([])
+  const [visibleSignout, setVisibleSignout] = useState(false)
+  useEffect(() => {
+    console.log('NAVBAR: is auth ? ', isAuth)
+    setVisibleSignout(isAuth)
+    setRouts(loadHeader(isAuth))
+  },[isAuth])
   return <nav>
     <ul>
-      {routeArray.map(r => <li key={r.value}>
+      {routes.map(r => <li key={r.value}>
         <Link to={r.value}>{r.name}</Link>
       </li>)}
-      {isAuth ? <li><SignOutButton /></li> : ''}
+      {visibleSignout ? <li><SignOutButton /></li> : ''}
     </ul>
   </nav>
 }

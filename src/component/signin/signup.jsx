@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import * as ROUTES from '../route/route'
+import * as ROUTES from '../route/routeNonAuth'
 import { FirebaseContext } from '../firebase'
  
 const SignUpPage = () => {
@@ -15,10 +15,10 @@ const SignUpPage = () => {
   const [state,setState] = useState(INITIAL_STATE)
   const onSubmit = event => {
     event.preventDefault();
-    const { username, email, passwordOne } = state;
+    const { email, passwordOne } = state;
     firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
+      .then(() => {
         setState({ ...INITIAL_STATE, redirect: '/home' });
       })
       .catch(error => {
