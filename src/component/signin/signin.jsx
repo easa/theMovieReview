@@ -41,26 +41,21 @@ const SignInForm = () => {
     return <Redirect to={state.redirect} />
   }
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        name="email"
-        value={email}
-        onChange={onChange}
-        type="text"
-        placeholder="Email Address"
-      />
-      <input
-        name="password"
-        value={password}
-        onChange={onChange}
-        type="password"
-        placeholder="Password"
-      />
-      <button disabled={isInvalid} type="submit">
-        Sign In
-      </button>
-      {error && <p>{error.message}</p>}
-    </form>
+    <div className="col-md-6 coffset-md-3">
+      <form onSubmit={onSubmit}>
+        <div className="form-group">
+          <label htmlFor="exampleInzputEmail1">Email address</label>
+          <input value={email} onChange={onChange} name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input value={password} onChange={onChange} name="password" type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+        </div>
+        <button className="btn btn-primary" disabled={isInvalid} type="submit"> Sign In </button>
+        {error && <p className="text-danger">{error.message}</p>}
+      </form>
+    </div>
   )
 }
 

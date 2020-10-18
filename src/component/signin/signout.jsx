@@ -19,7 +19,7 @@ const SignOutButton = () => {
     return <Redirect to={state.redirect} />
   }
   return (
-    <button type="button" onClick={onClick} tooltip={state.error}>
+    <button onClick={onClick} tooltip={state.error} className="btn btn-sm btn-outline-secondary" type="button">
       Sign Out
     </button>
   )

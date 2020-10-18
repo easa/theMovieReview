@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar, ContentSwitch } from './component/route';
 import Firebase, { FirebaseContext } from './component/firebase'
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => (
   <FirebaseContext.Provider value={new Firebase()}>
