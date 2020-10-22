@@ -1,5 +1,7 @@
 import app, { auth } from 'firebase/app';
 import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/database'
 // import * as CONFIG from './config'
 import CONFIG from './config.private'
 
@@ -8,6 +10,8 @@ class Firebase {
     if (!app.apps.length) {
       app.initializeApp(CONFIG)
       this.auth = app.auth()
+      this.database = app.database()
+      this.store = app.firestore()
     }
   }
   doCreateUserWithEmailAndPassword = (email, password) =>

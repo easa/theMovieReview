@@ -1,0 +1,16 @@
+const INITIAL_MOVIE = {
+  id: 'oijafoi34jo',
+  title: 'movie title',
+  director: 'john doe',
+  stars: 'john doe, micheal jackson',
+  year: 'year of production',
+  review: 'a simple text written about this movie',
+  author: { name: 'easa', id: 'alksjfoii2joi4j' },
+  date: new Date(),
+  comments: [{
+    id: '3434',
+    content: 'this is a good movie',
+    author: { name: 'easa', id: 'alksjfoii2joi4j' },
+    date: new Date()
+  }]
+}
