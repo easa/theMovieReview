@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
-import { FirebaseContext } from '../firebase'
+import { Context } from '../../app'
 
 const ReviewPage = (props) => {
   const [movie, setMovie] = useState({})
-  const firebase = useContext(FirebaseContext)
+  const {firebase} = useContext(Context)
   const params = useParams()
   useEffect(() => {
     console.log(params)

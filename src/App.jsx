@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Navbar, ContentSwitch } from './component/route';
-import Firebase, { FirebaseContext } from './component/firebase'
+import { Navbar, ContentSwitch } from './component/layout/route';
+import { Context, Provider } from './component/app/context'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => (
-  <FirebaseContext.Provider value={new Firebase()}>
+  <Provider value={Context}>
     <Router>
       <Navbar isAuthUser={true} />
       <ContentSwitch />
     </Router>
-  </FirebaseContext.Provider>
+  </Provider>
 )
 export default App;

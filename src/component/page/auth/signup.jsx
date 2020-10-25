@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import * as ROUTES from '../route/routeNonAuth'
-import { FirebaseContext } from '../firebase'
 import SignUpForm from './signupForm'
- 
+import { Context } from '../../app'
+
 const SignUpPage = () => {
-  const firebase = React.useContext( FirebaseContext   )
+  const {firebase} = React.useContext( Context   )
   const INITIAL_STATE = {
     username: '',
     email: '',
@@ -40,7 +39,7 @@ const SignUpPage = () => {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to={"/signup"}>Sign Up</Link>
   </p>
 )
  

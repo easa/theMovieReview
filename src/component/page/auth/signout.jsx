@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import { FirebaseContext } from '../firebase/index.js'
+import { Context } from '../../app'
 
 const SignOutButton = () => {
-  const firebase = useContext(FirebaseContext)
+  const { firebase } = useContext(Context)
   const [state, setState] = useState({})
   const onClick = () => {
     firebase.doSignOut().then(() => {
