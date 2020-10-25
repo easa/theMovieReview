@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import * as routeAuth from './routeAuth'
-import * as routeNonAuth from './routeNonAuth'
-import { SignOutButton } from '../signin/signout'
-import useAuth from '../signin/useAuth'
+import * as routeAuth from './route/routeAuth'
+import * as routeNonAuth from './route/routeNonAuth'
+import { SignOutButton } from '../page/auth/signout'
+import useAuth from '../app/auth/useAuth'
 
 const loadHeader = (isloadWithAuth) => {
   if (isloadWithAuth)

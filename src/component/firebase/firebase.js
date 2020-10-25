@@ -7,12 +7,11 @@ import CONFIG from './config.private'
 
 class Firebase {
   constructor() {
-    if (!app.apps.length) {
+    if (!app.apps.length)
       app.initializeApp(CONFIG)
-      this.auth = app.auth()
-      this.database = app.database()
-      this.store = app.firestore()
-    }
+    this.auth = app.auth()
+    this.database = app.database()
+    this.store = app.firestore()
   }
   doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);

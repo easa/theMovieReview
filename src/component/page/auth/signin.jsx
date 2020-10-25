@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Context } from '../../app/'
 import { SignUpLink } from './signup.jsx'
-import { FirebaseContext } from '../firebase/index.js'
 
 const SignInPage = () => (
   <div>
@@ -18,7 +18,7 @@ const INITIAL_STATE = {
 }
 
 const SignInForm = () => {
-  const firebase = useContext(FirebaseContext)
+  const { firebase } = useContext(Context)
   const [state, setState] = useState(INITIAL_STATE)
   const onSubmit = event => {
     event.preventDefault()

@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { FirebaseContext } from '../firebase'
+import { Context } from '../../app'
 
 const useAuth = () => {
-  const firebase = useContext(FirebaseContext)
+  const { firebase } = useContext(Context)
   const [isOnline, setIsOnline] = useState(false);
   useEffect(() => {
     const unsubscribe = firebase.auth.onAuthStateChanged(user => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Signup from '../signin/signup.jsx'
-import Signin from '../signin/signin'
-import Home from '../home/index.jsx'
-import SingleReviewPage from '../review/singleReview.jsx'
-import ReviewsPage from '../review/reviewsPage.jsx'
-import AddReview from '../review/addReview.jsx'
+import Signup from '../page/auth/signup.jsx'
+import Signin from '../page/auth/signin'
+import Home from '../page/home/index.jsx'
+import SingleReviewPage from '../page/review/singleReview.jsx'
+import ReviewsPage from '../page/review/reviewsPage.jsx'
+import AddReview from '../page/review/addReview.jsx'
 // TODO:  className="row" for Switch that currently add a simple div
 const ContentSwitch = () => (
   <div className="container">

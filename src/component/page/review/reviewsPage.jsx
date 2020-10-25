@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { FirebaseContext } from '../firebase'
+import { Context } from '../../app'
 import { Review } from './singleReview'
 
 const ReviewPage = () => {
   const [reviews, setReviews] = useState([])
   const [state, setState] = useState({})
-  const firebase = useContext(FirebaseContext)
+  const {firebase} = useContext(Context)
   useEffect(() => {
     const reviewRef = firebase.store.collection('review').orderBy("date").limit(10)
     reviewRef.get().then(querySnapshot => {

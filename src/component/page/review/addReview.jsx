@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { FirebaseContext } from '../firebase'
 import ReviewForm from './ReviewForm'
+import { Context } from '../../app'
 
 const INITIAL_REVIEW = {
   id: '',
@@ -13,7 +13,7 @@ const INITIAL_REVIEW = {
 }
 
 const AddReviewPage = () => {
-  const firebase = useContext(FirebaseContext)
+  const {firebase} = useContext(Context)
   const [state, setState] = useState({})
   const [review, setReview] = useState(INITIAL_REVIEW)
   const onSubmit = event => {
